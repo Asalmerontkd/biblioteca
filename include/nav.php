@@ -23,22 +23,30 @@
 	      		if ($_SESSION["rol"]==1) //Administrador
 	      		{
 	      ?>
-			      <li><a href="#">Usuarios</a></li>
 			      <li class="dropdown">
-			        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Registro <span class="caret"></span></a>
+			        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Catalogación <span class="caret"></span></a>
 			        <ul class="dropdown-menu">
 			          <li><a href="autor">Autores</a></li>
 			          <li><a href="editorial">Editoriales</a></li>
 			          <li><a href="clasificacion">Clasificación Dewey</a></li>
-			          <li><a href="libros">Libros</a></li>
+			          <li><a href="libros">Nueva ficha</a></li>
 			        </ul>
 			      </li>
+			      <li><a href="consulta">Búsqueda</a></li>
 			      <li class="dropdown">
-			        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Consultas <span class="caret"></span></a>
+			        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Estadísticas <span class="caret"></span></a>
 			        <ul class="dropdown-menu">
-			          <li><a href="consulta">Libros</a></li>
+			          <li><a href="#">trabajo de los catalogadores</a></li>
+			          <li><a href="#">libro mas prestado</a></li>
+			          <li><a href="#">usuario con más préstamos</a></li>
+			          <li><a href="#">hombres</a></li>
+			          <li><a href="#">mujeres</a></li>
+			          <li><a href="#">edades</a></li>
 			        </ul>
 			      </li>
+			      <li><a href="consulta">Administración</a></li>
+			      <li><a href="consulta">Impresión de Etiquetas</a></li>
+			      <li><a href="consulta">Inventario</a></li>
 	      <?php
 	      		}
 

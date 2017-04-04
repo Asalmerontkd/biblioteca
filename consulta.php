@@ -34,7 +34,7 @@
 		<div class="container">
 			<div class="col-md-5">
 			    <div class="form-area">  
-			        <form role="form" method="post" action="consulta.php">
+			        <form role="form" method="post" action="consulta">
 			        <br style="clear:both">
 	                    <h3 id="tituloForm">Consulta de libros</h3>
 						<div class="form-group">

@@ -14,6 +14,18 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 		<link rel="stylesheet" type="text/css" href="estilo/style.css">
+
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+			    $( "#autor" ).autocomplete({
+			      source: "buscaralumno.php",
+			      minLength: 2
+			    });
+			});
+		</script>
 		
 	</head>
 	<body>
@@ -47,20 +59,7 @@
 							<input type="text" class="form-control" name="responsabilidad" placeholder="Mención de responsabilidad" required>
 						</div>
 						<div class="form-group">
-							<select class="form-control" name="autor">
-								<?php
-									require_once ("clase/Autor.php");
-									$consulta = new Autor;
-									$result = $consulta->consultarAutores();
-									if ($result->rowCount() > 0) {
-										foreach($result as $row)
-										{
-											echo "<tr>";
-											echo "<option value='".$row['id']."'>".$row['apellido'].", ".$row['nombre']."</option>";
-										}
-									}
-								?>
-							</select>
+							<input type="text" class="form-control" id="autor" name="autor" placeholder="Autor" required>
 						</div>
 						<div class="form-group">
 							<select class="form-control" name="dewey">
