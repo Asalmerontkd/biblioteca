@@ -28,7 +28,7 @@
 			        <ul class="dropdown-menu">
 			          <li><a href="autor">Autores</a></li>
 			          <li><a href="editorial">Editoriales</a></li>
-			          <li><a href="dewey">Clasificación Dewey</a></li>
+			          <li><a href="clasificacion">Clasificación Dewey</a></li>
 			          <li><a href="libros">Libros</a></li>
 			        </ul>
 			      </li>

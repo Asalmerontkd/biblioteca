@@ -6,7 +6,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Autores</title>
+		<title>Clasificaciones Dewey</title>
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -21,8 +21,8 @@
 			<?php
 				include "include/nav.php";
 				if (isset($_SESSION["rol"])) {
-					require_once ("clase/Autor.php");
-					$consulta = new Autor;
+					require_once ("clase/Dewey.php");
+					$consulta = new Dewey;
 					if ($_SESSION["rol"] != 1 && $_SESSION["rol"] != 2) {
 						print '<script type="text/javascript">window.top.location.href = "inicio";</script>';
 					}
@@ -36,14 +36,14 @@
 		<div class="container">
 			<div class="col-md-5">
 			    <div class="form-area">  
-			        <form role="form" method="post" action="funcionAutor">
+			        <form role="form" method="post" action="funcionDewey">
 			        <br style="clear:both">
-	                    <h3 id="tituloForm">Registro de autor</h3>
-	    				<div class="form-group">
-							<input type="text" class="form-control" id="name" name="name" placeholder="Nombre" required>
+	                    <h3 id="tituloForm">Registro de Clasificación Dewey</h3>
+	                    <div class="form-group">
+							<input type="number" class="form-control" id="clave" name="clave" placeholder="Clave" required>
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos" required>
+							<input type="text" class="form-control" id="clasificacion" name="clasificacion" placeholder="Clasificacion" required>
 							<input type="text" hidden="true" name="flag" value="1">
 						</div>
 			            
@@ -57,7 +57,7 @@
 
 		<div class="container">
 			<div class="panel panel-primary">
-				<div class="panel-heading">Autores</div>
+				<div class="panel-heading">Clasificaciones Dewey</div>
 				<div class="panel-body">
 					<div class="row">
 					  <div class="col-lg-6">
@@ -65,19 +65,17 @@
 					    	<div class="table-responsive">
 						    	<table class="table .table-sm table-hover table-bordered">
 						    		<tr>
-						    			<th>ID</th>
-						    			<th>Nombre</th>
-						    			<th>Apellidos</th>
+						    			<th>Clave</th>
+						    			<th>Clasificación Dewey</th>
 						    		</tr>
 						    		<?php
-										$result = $consulta->consultarAutores();
+										$result = $consulta->consultarDewey();
 										if ($result->rowCount() > 0) {
 											foreach($result as $row)
 											{
 												echo "<tr>";
-												echo "<td>".$row['id']."</td>";
-												echo "<td>".$row['nombre']."</td>";
-												echo "<td>".$row['apellido']."</td>";
+												echo "<td>".$row['clave']."</td>";
+												echo "<td>".$row['clasificacion']."</td>";
 												echo "</tr>";
 											}
 										}

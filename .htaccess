@@ -9,3 +9,13 @@ RewriteRule ^login-fail/?$ login.php?flag=1
 RewriteRule ^cerrar/?$ clase/sesiones.php?flag=2
 
 RewriteRule ^autor/?$ autor.php
+RewriteRule ^funcionAutor/?$ clase/autores.php
+
+RewriteRule ^editorial/?$ editorial.php
+RewriteRule ^funcionEditorial/?$ clase/editoriales.php
+
+RewriteRule ^clasificacion/?$ clasificacion.php
+RewriteRule ^funcionDewey/?$ clase/clasificaciones.php
+
+RewriteRule ^libros/?$ libro.php
+RewriteRule ^funcionLibros/?$ clase/libros.php

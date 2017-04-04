@@ -18,3 +18,8 @@ body {
 #panelLoginLast {
 	margin-bottom:0px;
 }
+
+#tituloForm {
+	margin-bottom: 25px; 
+	text-align: center;
+}
