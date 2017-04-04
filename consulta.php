@@ -73,7 +73,6 @@
 						    			require_once ("clase/Libro.php");
 										$consulta = new Libro;
 										if (isset($_POST['busqueda'])) {
-											echo "true";
 											$result = $consulta->consultarLibrosTitulo($_POST['busqueda']);
 											if ($result->rowCount() > 0) {
 												foreach($result as $row)
