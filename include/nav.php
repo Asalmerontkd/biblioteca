@@ -11,7 +11,8 @@
 	      <span class="icon-bar"></span>
 	      <span class="icon-bar"></span>
 	    </button>
-	    <a class="navbar-brand" href="#">
+	    <a class="navbar-brand" href="inicio">
+	    	<img id="navLogo" src="img/librerias.png">
 	    </a>
 	  </div>
 	  <div id="navbar" class="navbar-collapse collapse">

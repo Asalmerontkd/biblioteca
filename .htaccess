@@ -19,3 +19,5 @@ RewriteRule ^funcionDewey/?$ clase/clasificaciones.php
 
 RewriteRule ^libros/?$ libro.php
 RewriteRule ^funcionLibros/?$ clase/libros.php
+
+RewriteRule ^consulta/?$ consulta.php

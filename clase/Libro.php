@@ -23,5 +23,15 @@
 			$result->execute();
 			return ($result);
 		}
+
+		function consultarLibrosTitulo($titulo)
+		{
+			$con = Database::getInstance();
+			$sql = "SELECT * FROM libro WHERE titulo LIKE :titulo";
+			$result = $con->db->prepare($sql);
+			$params = array("titulo" => "%".$titulo."%");
+			$result->execute($params);
+			return ($result);
+		}
 	}
 ?>
