@@ -1,0 +1,11 @@
+RewriteEngine on
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^inicio/?$ index.php
+RewriteRule ^login/?$ login.php
+RewriteRule ^initLogin/?$ clase/sesiones.php
+RewriteRule ^login-fail/?$ login.php?flag=1
+RewriteRule ^cerrar/?$ clase/sesiones.php?flag=2
+
+RewriteRule ^autor/?$ autor.php
