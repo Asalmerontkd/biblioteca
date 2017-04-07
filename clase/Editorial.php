@@ -23,5 +23,15 @@
 			$result->execute();
 			return ($result);
 		}
+
+		function consultarEditorial($nombre)
+		{
+			$con = Database::getInstance();
+			$sql = "SELECT * FROM editorial WHERE editorial LIKE :nombre";
+			$result = $con->db->prepare($sql);
+			$params = array("nombre" => "%".$nombre."%");
+			$result->execute($params);
+			return ($result);
+		}
 	}
 ?>

@@ -40,6 +40,11 @@
 						<div class="form-group">
 							<input type="text" class="form-control" name="busqueda" placeholder="Busqueda" required>
 						</div>
+						<div class="form-group">
+							<input type="radio" name="criterio" value="1" checked>Titulo
+							  <input type="radio" name="criterio" value="2">Autor
+							  <input type="radio" name="criterio" value="3">Editorial
+						</div>
 			        <button type="submit" id="submit" name="submit" class="btn btn-primary pull-right">Registrar</button>
 			        </form>
 			    </div>
@@ -73,7 +78,41 @@
 						    			require_once ("clase/Libro.php");
 										$consulta = new Libro;
 										if (isset($_POST['busqueda'])) {
-											$result = $consulta->consultarLibrosTitulo($_POST['busqueda']);
+											$result = null;
+											
+											if ($_POST['criterio'] == 1) //Titulo
+											{
+												$result = $consulta->consultarLibrosTitulo($_POST['busqueda']);
+											}
+											elseif ($_POST['criterio'] == 2) //Autor
+											{
+												require_once ("clase/Autor.php");
+												$autor = new Autor;
+												$res = $autor->consultarAutor($_POST['busqueda']);
+												$idAutor = 0;
+												if ($res->rowCount() > 0) {
+													foreach($res as $row)
+													{
+														$idAutor = $row['id'];
+													}
+												}
+												$result = $consulta->consultarLibrosAutor($idAutor);
+											}
+											elseif ($_POST['criterio'] == 3) //Editorial
+											{
+												require_once ("clase/Editorial.php");
+												$edi = new Editorial;
+												$res = $edi->consultarEditorial($_POST['busqueda']);
+												$idEdi = 0;
+												if ($res->rowCount() > 0) {
+													foreach($res as $row)
+													{
+														$idEdi = $row['id'];
+													}
+												}
+												$result = $consulta->consultarLibrosEditorial($idEdi);
+											}
+											
 											if ($result->rowCount() > 0) {
 												foreach($result as $row)
 												{

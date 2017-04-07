@@ -33,5 +33,25 @@
 			$result->execute($params);
 			return ($result);
 		}
+
+		function consultarLibrosAutor($idautor)
+		{
+			$con = Database::getInstance();
+			$sql = "SELECT * FROM libro WHERE autor = :autor";
+			$result = $con->db->prepare($sql);
+			$params = array("autor" => $idautor);
+			$result->execute($params);
+			return ($result);
+		}
+
+		function consultarLibrosEditorial($ideditorial)
+		{
+			$con = Database::getInstance();
+			$sql = "SELECT * FROM libro WHERE editorial = :editorial";
+			$result = $con->db->prepare($sql);
+			$params = array("editorial" => $ideditorial);
+			$result->execute($params);
+			return ($result);
+		}
 	}
 ?>
