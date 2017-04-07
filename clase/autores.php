@@ -8,8 +8,7 @@
 			if ($flag == 1) //Agregar autor
 			{
 				$nombre = $_POST['name'];
-				$apellidos = $_POST['apellidos'];
-				$result = $myAutor->registrarAutor($nombre, $apellidos);
+				$result = $myAutor->registrarAutor($nombre);
 
 				print '<script type="text/javascript">window.top.location.href = "autor";</script>';
 			}

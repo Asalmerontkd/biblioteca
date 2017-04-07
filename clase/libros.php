@@ -5,6 +5,8 @@
 		if (isset($flag)) {
 			require_once ("Libro.php");
 			$myLibro = new Libro;
+			require_once ("Autor.php");
+			$myAutor = new Autor;
 			if ($flag == 1) //Agregar autor
 			{
 				$ISBN = $_POST['isbn'];
@@ -20,6 +22,25 @@
 				$notaGeneral = $_POST['notaGeneral'];
 				$notaContenido = $_POST['notaContenido'];
 				$temasGenerales = $_POST['temas'];
+
+				$innerResult = $myAutor->validaAutor($autor);
+				if ($innerResult->rowCount() > 0) {
+					foreach($innerResult as $inrow){
+						$autor = $inrow['id'];
+					}
+				}
+				else{
+					$data->registrarAutor($autor);
+					
+					$innerPost = $data->validaAutor($autor);
+					if ($innerPost->rowCount() > 0) {
+						foreach($innerPost as $inPost){
+							$autor = $inPost['id'];
+						}
+					}
+				}
+
+
 
 				$result = $myLibro->registrarLibro($ISBN, $titulo, $responsabilidad, $autor, $anio, $clasificacion, $editorial, $edicion, $lugar, $descFisica, $notaGeneral, $notaContenido, $temasGenerales);
 

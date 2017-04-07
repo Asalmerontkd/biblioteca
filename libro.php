@@ -14,18 +14,11 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 		<link rel="stylesheet" type="text/css" href="estilo/style.css">
+		<link rel="stylesheet" type="text/css" href="estilo/jqueryStyle.css">
 
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
 
-		<script type="text/javascript">
-			$(document).ready(function(){
-			    $( "#autor" ).autocomplete({
-			      source: "buscaralumno.php",
-			      minLength: 2
-			    });
-			});
-		</script>
+
+		
 		
 	</head>
 	<body>
@@ -56,7 +49,7 @@
 							<input type="text" class="form-control" name="titulo" placeholder="Titulo" required>
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" name="responsabilidad" placeholder="Mención de responsabilidad" required>
+							<input type="text" class="form-control" name="responsabilidad" placeholder="Mención de responsabilidad">
 						</div>
 						<div class="form-group">
 							<input type="text" class="form-control" id="autor" name="autor" placeholder="Autor" required>
@@ -94,25 +87,25 @@
 							</select>
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" name="edicion" placeholder="Edición" required>
+							<input type="text" class="form-control" name="edicion" placeholder="Edición">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" name="anio" placeholder="Año" required>
+							<input type="text" class="form-control" name="anio" placeholder="Año">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" name="lugar" placeholder="Lugar" required>
+							<input type="text" class="form-control" name="lugar" placeholder="Lugar">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" name="desFisica" placeholder="Descripción física" required>
+							<input type="text" class="form-control" name="desFisica" placeholder="Descripción física">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" name="notaGeneral" placeholder="Notas generales" required>
+							<input type="text" class="form-control" name="notaGeneral" placeholder="Notas generales">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" name="notaContenido" placeholder="Notas de contenido" required>
+							<input type="text" class="form-control" name="notaContenido" placeholder="Notas de contenido">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" name="temas" placeholder="Temas generales" required>
+							<input type="text" class="form-control" name="temas" placeholder="Temas generales">
 							<input type="text" hidden="true" name="flag" value="1">
 						</div>
 			            
@@ -167,7 +160,28 @@
 
 
 		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+		<script
+		  src="https://code.jquery.com/jquery-3.2.1.js"
+		  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+		  crossorigin="anonymous"></script>
+		<script
+		  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+		  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+		  crossorigin="anonymous"></script>
+
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+		<script type="text/javascript">
+			$(function() {
+    
+			    //autocomplete
+			    $("#autor").autocomplete({
+			        source: "valAutor",
+			        minLength: 1
+			    });                
+
+			});
+		</script>
 	</body>
 </html>

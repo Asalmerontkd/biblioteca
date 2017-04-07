@@ -43,7 +43,6 @@
 							<input type="text" class="form-control" id="name" name="name" placeholder="Nombre" required>
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Apellidos" required>
 							<input type="text" hidden="true" name="flag" value="1">
 						</div>
 			            
@@ -67,7 +66,6 @@
 						    		<tr>
 						    			<th>ID</th>
 						    			<th>Nombre</th>
-						    			<th>Apellidos</th>
 						    		</tr>
 						    		<?php
 										$result = $consulta->consultarAutores();
@@ -77,7 +75,6 @@
 												echo "<tr>";
 												echo "<td>".$row['id']."</td>";
 												echo "<td>".$row['nombre']."</td>";
-												echo "<td>".$row['apellido']."</td>";
 												echo "</tr>";
 											}
 										}
